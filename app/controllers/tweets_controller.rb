@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all
-    authenticate @tweets
+    #authenticate @tweets
   end
 
   def show
@@ -36,7 +36,7 @@ class TweetsController < ApplicationController
       redirect_to tweets_path
     else
       render :edit
-      ends
+      end
   end
 
   def destroy

@@ -11,10 +11,12 @@ User on the left, tweets in the middle, highlighted tweet on the right that also
     </div>
 
     <div id="column-tweets" class="col-xs-12 col-md-6 col-lg-4">
-      <%= render 'shared/tweet_box' %>
+      <% @tweets.reverse.each do |tweet| %>
+        <%= render 'shared/tweet_box', tweet: tweet %>
+      <% end %>
     </div>
 
-    <div id="colum-highlight" class="col-xs-12 col-md-6 col-lg-4 bg-primary">
+    <div id="colum-highlight" class="col-xs-12 col-md-6 col-lg-4 border">
       Content
     </div>
   </div>

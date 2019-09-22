@@ -19,9 +19,13 @@
     </div>
   </div>
   <div class="card-profile-bio border-top pt-2 pb-2">
-    THIS IS WHERE A BIO WILL GO
-    IT COULD BE OF SOME LENGTH
-    OR IT COULD BE QUITE SHORT
+    <% if @user.bio.present? %>
+      <p><%= @user.bio %></p>
+      <% elsif @user == current_user %>
+      <p>Tell us about yourself</p>
+    <% else %>
+      <p><%= "#{@user.username.capitalize} hasn't listed a biography, yet." %></p>
+    <% end %>
   </div>
   </div>
 </div>

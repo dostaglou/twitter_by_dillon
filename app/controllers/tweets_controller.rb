@@ -3,26 +3,24 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all
-    #authenticate @tweets
+    @tweet = Tweet.new
+    @user = current_user
   end
 
   def show
-    authenticate @tweet
   end
 
   def new
     @tweet = Tweet.new
-    authorize @tweet
   end
 
   def create
     @tweet = Tweet.new(set_tweet_params)
-    authorize @tweet
     @tweet.user = current_user
     if @tweet.save
       redirect_to tweets_path
     else
-      render :new
+      redirect_to tweets_path
     end
   end
 
@@ -31,7 +29,6 @@ class TweetsController < ApplicationController
   end
 
   def update
-    authorize @tweet
     if @tweet.update(set_tweet_params)
       redirect_to tweets_path
     else
@@ -40,7 +37,6 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    authorize @tweet
     @tweet.destroy
     redirect_to tweets_path
   end

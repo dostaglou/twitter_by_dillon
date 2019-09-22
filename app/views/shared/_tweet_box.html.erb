@@ -24,7 +24,7 @@ This will need to be generated with a loop over the data but below shall be the 
       <div class="d-flex justify-content-around">
         <p>Likes <strong>1</strong></p>
         <p>Replies <strong>1</strong></p>
-        <p>Date <strong>3 day ago</strong></p>
+        <p><%= tweet.created_at.strftime("%b %d, %Y") %></p>
       </div>
     </div>
 

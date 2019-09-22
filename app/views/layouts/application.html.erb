@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/aa4de98af5.js" crossorigin="anonymous"></script>
     <title>TwitterByDillon</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +13,7 @@
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

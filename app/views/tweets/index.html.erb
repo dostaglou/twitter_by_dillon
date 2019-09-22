@@ -1,1 +1,20 @@
-<h1>Tweets#index</h1>
+<!--
+On lage screen, it should be a 3 column display
+User on the left, tweets in the middle, highlighted tweet on the right that also shows responses to it.
+ -->
+<div class="container">
+  <div class="row justify-content-between">
+
+    <div id="colum-profile" class="col-xs-12 col-md-6 col-lg-4">
+      <%= render 'shared/profile_box' %>
+    </div>
+
+    <div id="column-tweets" class="col-xs-12 col-md-6 col-lg-4">
+      <%= render 'shared/tweet_box' %>
+    </div>
+
+    <div id="colum-highlight" class="col-xs-12 col-md-6 col-lg-4 bg-primary">
+      Content
+    </div>
+  </div>
+</div>

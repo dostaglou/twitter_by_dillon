@@ -10,12 +10,17 @@ This will need to be generated with a loop over the data but below shall be the 
           <%= image_tag 'meintaipei.jpg' %>
         <% end %>
       </div>
-      <%= link_to "#" do  %>
-        <i class="fas fa-heart"></i>
-      <% end %>
-      <%= link_to "#" do  %>
-        <i class="fas fa-shoe-prints"></i>
-      <% end %>
+      <div class="card-tweet-topline">
+        <p><%= tweet.user.username.capitalize %></p>
+        <div class="d-flex justify-content-around">
+          <%= link_to "#" do  %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+          <%= link_to "#" do  %>
+            <i class="fas fa-shoe-prints"></i>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="card-tweet-tweet ml-2 border-top pt-2 pb-2">
      <%= tweet.content %>

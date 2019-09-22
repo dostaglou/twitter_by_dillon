@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all
-    #authenticate @tweets
+    @tweet = Tweet.new
   end
 
   def show
@@ -12,17 +12,16 @@ class TweetsController < ApplicationController
 
   def new
     @tweet = Tweet.new
-    authorize @tweet
   end
 
   def create
     @tweet = Tweet.new(set_tweet_params)
-    authorize @tweet
     @tweet.user = current_user
+
     if @tweet.save
       redirect_to tweets_path
     else
-      render :new
+      render :index
     end
   end
 

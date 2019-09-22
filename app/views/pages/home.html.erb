@@ -2,8 +2,14 @@
   <div class="row justify-content-around">
     <h1>Twitter By Dillon</h1>
   </div>
+  <% if !signed_in? %>
   <div class="row justify-content-around">
     <%= link_to "sign in", new_user_session_path, class: "btn btn-primary" %>
     <%= link_to "sign up", new_user_registration_path, class: "btn btn-outline-primary"  %>
   </div>
+  <% else %>
+    <div class="row justify-content-around">
+      <%= link_to "My Page", tweets_path, class: "btn btn-primary w-100"  %>
+    </div>
+  <% end %>
 </div>

@@ -5,13 +5,17 @@
       <%= link_to user_path(@user) do  %>
         <%= image_tag 'meintaipei.jpg' %>
       <% end %>
+        <%= link_to "Edit", '#', class: "btn btn-outline-secondary profile-button" %>
+      <% if @user == current_user %>
+        <% else %>
+        <%= link_to "Follow", '#', class: "btn btn-outline-success profile-button" %>
+      <% end %>
     </div>
     <div class="card-profile-info ml-2">
       <h3><%= @user.username.capitalize %></h3>
       <p>Following #</p>
       <p>Followers #</p>
       <p>Tweet #</p>
-      <%= link_to "Follow Me", '#'  %>
     </div>
   </div>
   <div class="card-profile-bio border-top pt-2 pb-2">

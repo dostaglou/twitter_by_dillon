@@ -2,12 +2,12 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    authenticate @users
   end
 
   def show
     @user = User.find(params[:id])
-    authenticate @user
+    @tweet = Tweet.new
+    @tweets = Tweet.where(user_id: @user.id)
   end
 
 end

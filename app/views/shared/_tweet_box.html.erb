@@ -13,11 +13,13 @@ This will need to be generated with a loop over the data but below shall be the 
       <div class="card-tweet-topline">
         <p><%= tweet.user.username.capitalize %></p>
         <div class="d-flex justify-content-around">
-          <%= link_to "#" do  %>
-            <i class="fas fa-heart"></i>
-          <% end %>
-          <%= link_to "#" do  %>
-            <i class="fas fa-shoe-prints"></i>
+          <% if tweet.user != current_user %>
+            <%= link_to "#" do  %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+            <%= link_to "#" do  %>
+              <i class="fas fa-shoe-prints"></i>
+            <% end %>
           <% end %>
         </div>
       </div>

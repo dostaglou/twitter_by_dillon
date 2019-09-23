@@ -7,13 +7,19 @@
       <% end %>
       <% if @user == current_user %>
         <%= link_to "Edit", edit_user_registration_path(@user), class: "btn btn-outline-secondary profile-button" %>
-        <% else %>
-          <%= link_to 'Follow',
-              follow_user_path(id: @user.id),
-              remote: true,
-              class: "btn btn-outline-success profile-button",
-              method: :post %>
-        <% end %>
+      <% elsif is_following?(current_user.id, @user.id) %>
+        <%= link_to 'Unfollow',
+            unfollow_user_path(id: @user.id),
+            remote: true,
+            class: "btn btn-outline-warning profile-button",
+            method: :post  %>
+      <% else %>
+        <%= link_to 'Follow',
+            follow_user_path(id: @user.id),
+            remote: true,
+            class: "btn btn-outline-success profile-button",
+            method: :post %>
+      <% end %>
     </div>
     <div class="card-profile-info ml-2">
       <h3><%= @user.username.capitalize %></h3>

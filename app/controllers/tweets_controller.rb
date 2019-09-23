@@ -18,7 +18,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(set_tweet_params)
     @tweet.user = current_user
     if @tweet.save
-      redirect_to tweets_path
+      respond_to do |format|
+        format.js
+        format.html { redirect_to root_path }
+      end
     else
       redirect_to tweets_path
     end
@@ -33,7 +36,7 @@ class TweetsController < ApplicationController
       redirect_to tweets_path
     else
       render :edit
-      end
+    end
   end
 
   def destroy

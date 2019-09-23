@@ -6,7 +6,7 @@ This will need to be generated with a loop over the data but below shall be the 
   <div class="container">
     <div class="row p-2 mt-2 justify-content-around align-items-center">
       <div class="avatar-tweet">
-        <%= link_to user_path(tweet.user) do  %>
+        <%= link_to user_path(tweet.user.id) do  %>
           <%= image_tag 'meintaipei.jpg' %>
         <% end %>
       </div>

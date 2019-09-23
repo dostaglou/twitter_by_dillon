@@ -8,8 +8,12 @@ User on the left, tweets in the middle, highlighted tweet on the right that also
     <div class="row justify-content-between">
 
       <div id="colum-profile" class="col-xs-12 col-md-6 col-lg-4">
-        <%= render 'shared/profile_box' %>
-        <%= render 'shared/write_tweet' %>
+        <div id="profile-card-box">
+          <%= render 'shared/profile_box' %>
+        </div>
+        <div id="write-tweet-card">
+          <%= render 'shared/write_tweet' %>
+        </div>
       </div>
 
       <div id="column-tweets" class="col-xs-12 col-md-6 col-lg-4">

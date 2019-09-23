@@ -8,8 +8,10 @@ class TweetsController < ApplicationController
     @following_tweets = []
     @personal_tweets = []
     @non_personal_tweets = []
-    @tweets.each do |tweet|
-      @following_tweets << tweet if is_following?(current_user.id, tweet.user.id)
+    if signed_in?
+      @tweets.each do |tweet|
+        @following_tweets << tweet if is_following?(current_user.id, tweet.user.id)
+      end
     end
     @tweets.each do |tweet|
       if tweet.user == current_user

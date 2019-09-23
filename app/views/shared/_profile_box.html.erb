@@ -5,8 +5,8 @@
       <%= link_to user_path(@user) do  %>
         <%= image_tag 'meintaipei.jpg' %>
       <% end %>
-        <%= link_to "Edit", edit_user_registration_path(@user), class: "btn btn-outline-secondary profile-button" %>
       <% if @user == current_user %>
+        <%= link_to "Edit", edit_user_registration_path(@user), class: "btn btn-outline-secondary profile-button" %>
         <% else %>
         <%= link_to "Follow", '#', class: "btn btn-outline-success profile-button" %>
       <% end %>
@@ -26,6 +26,15 @@
     <% else %>
       <p><%= "#{@user.username.capitalize} hasn't listed a biography, yet." %></p>
     <% end %>
+    <span>
+      <% if @user != current_user %>
+        <%= link_to 'Following', follow_user_path(id: @user.id),
+                                  # remote: true,
+                                  class: "btn btn-primary",
+                                  method: :post %>
+      <% end %>
+
+    </span>
   </div>
   </div>
 </div>

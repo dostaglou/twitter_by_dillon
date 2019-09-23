@@ -1,15 +1,16 @@
-<div class="container">
+<div class="container mt-4">
   <div class="row justify-content-around">
-    <h1>Twitter By Dillon</h1>
-  </div>
-  <% if !signed_in? %>
-  <div class="row justify-content-around">
-    <%= link_to "sign in", new_user_session_path, class: "btn btn-primary" %>
-    <%= link_to "sign up", new_user_registration_path, class: "btn btn-outline-primary"  %>
-  </div>
-  <% else %>
-    <div class="row justify-content-around">
-      <%= link_to "My Page", tweets_path, class: "btn btn-primary w-100"  %>
+    <div class="col-xs-10 col-sm-10 col-md-8 col-lg-6 background-second">
+      <h1 class="text-center text-white  border-bottom pb-2 pt-2">
+        Twitter: By Dillon
+      </h1>
+      <p class="text-center text-white">This site was a test of capabilities using Ruby on Rails, Graphql (pending) and Vue.js (pending). it was built in a mere 7 days (55ish hours so far).</p>
+      <br>
+      <p class="text-center text-white">To Experience the wonders of Rail's Twitter, please click the sign up or sign in buttons bellow</p>
+      <div class="row justify-content-around mb-4">
+        <%= link_to "sign up", new_user_registration_path, class: "btn btn-outline-primary"  %>
+        <%= link_to "sign in", new_user_session_path, class: "btn btn-primary" %>
+      </div>
     </div>
-  <% end %>
+  </div>
 </div>

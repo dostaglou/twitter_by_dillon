@@ -12,13 +12,15 @@
             unfollow_user_path(id: @user.id),
             remote: true,
             class: "btn btn-outline-warning profile-button",
-            method: :post  %>
+            method: :post,
+            id: 'unfollow-btn'  %>
       <% else %>
         <%= link_to 'Follow',
             follow_user_path(id: @user.id),
             remote: true,
             class: "btn btn-outline-success profile-button",
-            method: :post %>
+            method: :post,
+            id: 'follow-btn' %>
       <% end %>
     </div>
     <div class="card-profile-info ml-2">

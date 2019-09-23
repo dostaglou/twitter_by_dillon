@@ -1,8 +1,14 @@
+include ApplicationHelper
+
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
     @tweets = Tweet.all
+    @following_tweets = []
+    @tweets.each do |tweet|
+      @following_tweets << tweet if is_following?(current_user.id, tweet.user.id)
+    end
     @tweet = Tweet.new
     @user = current_user
   end

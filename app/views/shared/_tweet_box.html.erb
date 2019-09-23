@@ -11,7 +11,7 @@ This will need to be generated with a loop over the data but below shall be the 
         <% end %>
       </div>
       <div class="card-tweet-topline">
-        <p><%= tweet.user.username.capitalize %></p>
+        <%= link_to tweet.user.username.capitalize, user_path(tweet.user.id)  %>
         <div class="d-flex justify-content-around">
           <% if tweet.user != current_user %>
             <%= link_to "#" do  %>

@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <div class="row justify-content-center">
     <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 bg-info text-center devise-form">
-      <h2>Sign up</h2>
+      <h2>Edit User Information</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -39,9 +39,9 @@
         <%= f.password_field :current_password, autocomplete: "current-password" %>
       </div>
 
-      <div class="form-buttons d-flex justify-content-around mt-2">
+      <div class="form-buttons mt-2">
         <div class="actions">
-          <%= f.button :submit, label: "Sign up", class: "btn btn-primary" %>
+          <%= f.button  :"Save Changes", class: "btn btn-primary w-100" %>
         </div>
         <%= render "devise/shared/links" %>
       </div>

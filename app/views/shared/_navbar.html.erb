@@ -14,7 +14,9 @@
   </div>
 </nav>
 <% else %>
-  <nav class="navbar navbar-light bg-light justify-content-center">
-    <%= link_to "Sign Up", "#", class: "navbar-brand" %>
+  <nav class="navbar navbar-light background-second justify-content-center border-dark border-bottom">
+    <%= link_to  root_path, class: "text-white" do %>
+      <h3 class="text-white">Twitter: By Dillon</h3>
+    <% end %>
   </nav>
 <% end %>

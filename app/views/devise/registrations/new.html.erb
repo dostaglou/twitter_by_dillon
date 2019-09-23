@@ -33,9 +33,9 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
-      <div class="form-buttons d-flex justify-content-around mt-2">
+      <div class="form-buttons mt-2">
         <div class="actions">
-          <%= f.button :submit, label: "Sign up", class: "btn btn-primary" %>
+          <%= f.button :"Sign up", class: "btn btn-primary w-100" %>
         </div>
         <%= render "devise/shared/links" %>
       </div>

@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
      @user = User.find(params[:id])
      if current_user.follow @user.id
        respond_to do |format|
-         format.html { redirect_to tweets_path }
+         format.html { redirect_to root_path }
          format.js
        end
      end
@@ -12,7 +12,6 @@ class RelationshipsController < ApplicationController
 
    def unfollow_user
      @user = User.find(params[:id])
-     raise
      if current_user.unfollow @user.id
        respond_to do |format|
          format.html { redirect_to root_path }

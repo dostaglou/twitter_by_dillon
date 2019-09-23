@@ -1,6 +1,4 @@
 var tweetContent = document.getElementById('tweet_content');
 tweetContent.value = ` `;
-var feed = document.getElementById('column-tweets');
+var feed = document.getElementById('personal');
 feed.insertAdjacentHTML('afterbegin', `<%= render 'shared/tweet_box', tweet: @tweet %>`)
-
-

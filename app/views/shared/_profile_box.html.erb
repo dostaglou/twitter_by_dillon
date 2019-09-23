@@ -8,8 +8,12 @@
       <% if @user == current_user %>
         <%= link_to "Edit", edit_user_registration_path(@user), class: "btn btn-outline-secondary profile-button" %>
         <% else %>
-        <%= link_to "Follow", '#', class: "btn btn-outline-success profile-button" %>
-      <% end %>
+          <%= link_to 'Follow',
+              follow_user_path(id: @user.id),
+              remote: true,
+              class: "btn btn-outline-success profile-button",
+              method: :post %>
+        <% end %>
     </div>
     <div class="card-profile-info ml-2">
       <h3><%= @user.username.capitalize %></h3>
@@ -27,13 +31,6 @@
       <p><%= "#{@user.username.capitalize} hasn't listed a biography, yet." %></p>
     <% end %>
     <span>
-      <% if @user != current_user %>
-        <%= link_to 'Following', follow_user_path(id: @user.id),
-                                  # remote: true,
-                                  class: "btn btn-primary",
-                                  method: :post %>
-      <% end %>
-
     </span>
   </div>
   </div>

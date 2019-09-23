@@ -6,8 +6,17 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
     @following_tweets = []
+    @personal_tweets = []
+    @non_personal_tweets = []
     @tweets.each do |tweet|
       @following_tweets << tweet if is_following?(current_user.id, tweet.user.id)
+    end
+    @tweets.each do |tweet|
+      if tweet.user == current_user
+        @personal_tweets << tweet
+      else
+        @non_personal_tweets << tweet
+      end
     end
     @tweet = Tweet.new
     @user = current_user

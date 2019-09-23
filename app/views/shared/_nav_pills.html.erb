@@ -3,7 +3,10 @@
       <a class="nav-link active text-center" data-toggle="pill" href="#home" aria-controls="pills-home" aria-selected="true">Following</a>
   </li>
   <li class="nav-item flex-grow-1">
-      <a class="nav-link text-center" data-toggle="pill" href="#global">All Tweets</a>
+      <a class="nav-link text-center" data-toggle="pill" href="#global">Other's</a>
+  </li>
+  <li class="nav-item flex-grow-1">
+      <a class="nav-link text-center" data-toggle="pill" href="#personal">Mine</a>
   </li>
 </ul>
 
@@ -14,7 +17,12 @@
     <% end %>
   </div>
   <div id="global" class="tab-pane fade">
-    <% @tweets.reverse.each do |tweet| %>
+    <% @non_personal_tweets.reverse.each do |tweet| %>
+      <%= render 'shared/tweet_box', tweet: tweet %>
+    <% end %>
+  </div>
+  <div id="personal" class="tab-pane fade">
+    <% @personal_tweets.reverse.each do |tweet| %>
       <%= render 'shared/tweet_box', tweet: tweet %>
     <% end %>
   </div>

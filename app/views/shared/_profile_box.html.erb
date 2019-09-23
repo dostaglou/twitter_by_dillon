@@ -24,10 +24,10 @@
       <% end %>
     </div>
     <div class="card-profile-info ml-2">
-      <h3><%= @user.username.capitalize %></h3>
-      <p>Following #</p>
-      <p>Followers #</p>
-      <p>Tweet #</p>
+      <h3 class="border-bottom"><%= @user.username.capitalize %></h3>
+      <p>Followers: <%= @user.followers.count %></p>
+      <p>Following: <%= @user.following.count %></p>
+      <p><%= "#{'Tweet'.pluralize(@user.tweets.count)}: #{@user.tweets.count}" %></p>
     </div>
   </div>
   <div class="card-profile-bio border-top pt-2 pb-2">

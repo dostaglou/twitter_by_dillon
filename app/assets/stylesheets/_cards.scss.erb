@@ -1,7 +1,9 @@
 .card-profile {
+  background-color: beige;
   width: 100%;
   border: 1px solid black;
-  box-shadow: 1px 1px 1px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 1px 1px;
   .profile-button {
     position: absolute;
     bottom: 0;
@@ -14,15 +16,17 @@
     }
   }
   &:hover {
-    box-shadow: 2px 2px 3px;
+    box-shadow: 0px 0px 3px 2px #254e58;
   }
 }
 
 .card-tweet {
-  box-shadow: 1px 1px 1px;
+  background-color: beige;
+  box-shadow: 0px 0px 1px 1px;
   width: 100%;
   margin: 0 auto;
   border: 1px solid black;
+  border-radius: 15px;
   .card-tweet-topline {
     flex-grow: 1;
     margin-left: 12px;
@@ -34,7 +38,7 @@
     i {
       margin: 0;
       font-size: 25px;
-      color: pink;
+      color: #254e58;
       opacity: .3;
       &:hover {
         opacity: 1;
@@ -45,13 +49,17 @@
     opacity: .6;
   }
   &:hover {
-    box-shadow: 2px 2px 3px;
+    box-shadow: 0px 0px 5px 2px #254e58;
+;
   }
 }
 
 .card-write-tweet {
+  background-color: beige;
   margin: 8px 0;
   border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 0px 0px 1px 1px;
   form{
     width: 94%;
     margin: 0 auto;
@@ -62,6 +70,6 @@
   }
 
   &:hover {
-    box-shadow: 2px 2px 3px;
+    box-shadow: 0px 0px 5px 2px #254e58;
   }
 }

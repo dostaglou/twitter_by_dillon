@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
+  after_create :first_tweet
 
   def follow(user_id)
     following_relationships.create(following_id: user_id)
@@ -21,5 +22,10 @@ class User < ApplicationRecord
     following_relationships.find_by(following_id: user_id).destroy
   end
 
+  def first_tweet
+    t = Tweet.new(content: "Hey, all! I just joined! Welcome me to the party! #{Time.now}")
+    t.user = self
+    t.save!
+  end
 
 end

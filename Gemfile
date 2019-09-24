@@ -62,3 +62,5 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'faker'
+gem 'graphql'
+gem 'graphiql-rails', group: :development

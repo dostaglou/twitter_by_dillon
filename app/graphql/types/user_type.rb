@@ -11,7 +11,7 @@ module Types
     field :followers_count, Integer, null: true
     field :following, [Types::FollowType], null: false
     field :following_count, Integer, null: true
-
+    field :following_accounts, [Types::UserType], null: true
 
     def followers_count
       object.followers.size
@@ -19,6 +19,10 @@ module Types
 
     def following_count
       object.following.size
+    end
+
+    def following_accounts
+      object.following
     end
   end
 end

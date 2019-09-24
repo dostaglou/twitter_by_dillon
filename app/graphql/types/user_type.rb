@@ -6,6 +6,7 @@ module Types
     field :username, String, null: false
     field :bio, String, null: true
     field :avatar, String, null: true
+    field :tweets, [Types::TweetType], null: true
 
   end
 end

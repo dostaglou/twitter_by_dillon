@@ -10,6 +10,9 @@ module Types
     field :user, Types::UserType, null: false do
       argument :id, ID, required: true
     end
+    field :follow, Types::FollowType, null: false do
+      argument :id, ID, required: true
+    end
 
     def users
       User.all
@@ -29,6 +32,10 @@ module Types
 
     def follows
       Follow.all
+    end
+
+    def follow(id:)
+      Follow.find(id)
     end
   end
 end

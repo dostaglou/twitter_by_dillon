@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
   post ':id/follow_user', to: 'relationships#follow_user', as: :follow_user
   post ':id/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
 

@@ -6,9 +6,13 @@ module Types
     field :username, String, null: false
     field :bio, String, null: true
     field :avatar, String, null: true
+
     field :tweets, [Types::TweetType], null: true
+
     field :followers, [Types::FollowType], null: false
     field :followers_count, Integer, null: true
+    field :follower_accounts, [Types::UserType], null: true
+
     field :following, [Types::FollowType], null: false
     field :following_count, Integer, null: true
     field :following_accounts, [Types::UserType], null: true
@@ -24,5 +28,10 @@ module Types
     def following_accounts
       object.following
     end
+
+    def follower_accounts
+      object.followers
+    end
+
   end
 end

@@ -16,6 +16,12 @@ users.each do |user|
   puts "#{user} account created"
 end
 
+top_three = []
+
+User.all.each do |user|
+  top_three << user
+end
+
 10.times do
   u = User.new(
     username: Faker::Internet.username,
@@ -31,4 +37,15 @@ end
     t.save!
   end
   puts "#{u.username}'s account created with #{u.tweets.count} tweets"
+  puts "Time for the follow_lotto"
+  follow_lotto(u)
+end
+
+def follow_lotto(user)
+  if (0..10).to_a.sample > 2
+    top_three.sample.followers << user
+  end
+  if (0..10.to_a.sample > 6)
+    user.followers << top_three.sample
+  end
 end

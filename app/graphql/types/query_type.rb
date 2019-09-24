@@ -1,8 +1,9 @@
 module Types
   class QueryType < Types::BaseObject
 
-    field :users, [Types::UserType], null: false, description: "returns a list of users in the db"
+    field :users, [Types::UserType], null: false
     field :tweets, [Types::TweetType], null: false
+    field :follows, [Types::FollowType], null: false
     field :tweet, Types::TweetType, null: false do
       argument :id, ID, required: true
     end
@@ -26,5 +27,8 @@ module Types
       Tweet.find(id)
     end
 
+    def follows
+      Follow.all
+    end
   end
 end

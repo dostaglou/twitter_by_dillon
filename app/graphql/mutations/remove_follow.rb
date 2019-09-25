@@ -1,4 +1,4 @@
-class Mutations::CreateFollow < Mutations::BaseMutation
+class Mutations::RemoveFollow < Mutations::BaseMutation
   argument :active_user, ID, required: true
   argument :passive_user, ID, required: true
 
@@ -10,7 +10,7 @@ class Mutations::CreateFollow < Mutations::BaseMutation
   def resolve(passive_user:, active_user:)
     active = User.find(active_user)
     passive = User.find(passive_user)
-    if active.follow(passive.id)
+    if active.unfollow(passive.id)
       {
         active: active,
         passive: passive,

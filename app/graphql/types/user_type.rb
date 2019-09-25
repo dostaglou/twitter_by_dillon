@@ -9,11 +9,9 @@ module Types
 
     field :tweets, [Types::TweetType], null: true
 
-    field :followers, [Types::FollowType], null: false
     field :followers_count, Integer, null: true
     field :follower_accounts, [Types::UserType], null: true
 
-    field :following, [Types::FollowType], null: false
     field :following_count, Integer, null: true
     field :following_accounts, [Types::UserType], null: true
 

@@ -8,13 +8,14 @@ class Mutations::CreateUser < Mutations::BaseMutation
   field :user, Types::UserType, null: false
   field :errors, [String], null: false
 
-  def resolve(username:, email:, avatar:, bio:, password: )
+  def resolve(username:, email:, avatar:, bio:, password:)
     user = User.new(
             username: username,
             email: email,
             password: password,
-            bio: bio,
-            avatar: avatar)
+            bio: bio || nil, # not being allowed Comment below for possible solution to required null declaration
+            avatar: avatar || nil # not being allowed Comment below for possible solution to required null declaration
+            )
     user.skip_confirmation!
     if user.save
       {
@@ -29,3 +30,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
     end
   end
 end
+
+# def resolve(args = {})
+#   to pull what I need as needed
+# end

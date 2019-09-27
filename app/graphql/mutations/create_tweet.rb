@@ -1,14 +1,14 @@
 class Mutations::CreateTweet < Mutations::BaseMutation
   argument :content, String, required: true
-  argument :user_id, Integer, required: true
+  # argument :user_id, Integer, required: true
 
   field :tweet, Types::TweetType, null: false
   field :errors, [String], null: false
 
-  def resolve(content:, user_id:)
+  def resolve(content:)
     tweet = Tweet.new(
             content: content,
-            user_id: user_id
+            user: context[:current_user]
             )
     if tweet.save
       {

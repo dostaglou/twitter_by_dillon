@@ -11,7 +11,7 @@
 import gql from 'graphql-tag'
 
 const TWEETS_QUERY = gql`
-query Tweets{
+query tweets{
   tweets {
     id
     content

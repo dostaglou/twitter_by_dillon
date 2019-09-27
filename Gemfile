@@ -64,3 +64,4 @@ gem 'simple_form'
 gem 'faker'
 gem 'graphql'
 gem 'graphiql-rails', group: :development
+gem 'ancestry'

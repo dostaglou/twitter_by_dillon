@@ -1,8 +1,11 @@
 var column = document.getElementById('colum-highlight');
 column.innerHTML = ` `
 column.insertAdjacentHTML('afterbegin',
-  `<% @original.children.each do |tweet|  %>
-  <%= render 'shared/tweet_box', tweet: tweet %>
+  `<% @original.children.reverse.each do |tweet|  %>
+    <div class="d-flex align-items-center mb-3">
+      <i class="fas fa-angle-double-right p-2"></i>
+      <%= render 'shared/tweet_box', tweet: tweet %>
+    </div>
   <% end %>`)
 column.insertAdjacentHTML('afterbegin', `<%= render 'shared/write_response', response: @response %>`)
 column.insertAdjacentHTML('afterbegin', `<%= render 'shared/tweet_box', tweet: @original %>`)

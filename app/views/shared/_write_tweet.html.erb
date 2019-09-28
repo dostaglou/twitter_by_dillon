@@ -1,14 +1,16 @@
-<div class="card-write-tweet">
-  <div class="container">
-    <div class="row justify-content-around">
-      <h3>Compose a Tweet</h3>
-      <%= simple_form_for @tweet, remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "up to 140 character"  %>
-        <div class="d-flex justify-content-between mb-2">
-          <div></div>
-          <%= f.button :submit, class: "btn btn-outline-primary" %>
-        </div>
-      <% end %>
+<% if user == current_user %>
+  <div class="card-write-tweet">
+    <div class="container">
+      <div class="row justify-content-around">
+        <h3>Compose a Tweet</h3>
+        <%= simple_form_for @tweet, remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "up to 140 character"  %>
+          <div class="d-flex justify-content-between mb-2">
+            <div></div>
+            <%= f.button :submit, class: "btn btn-outline-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

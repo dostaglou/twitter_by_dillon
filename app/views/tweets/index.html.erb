@@ -2,14 +2,14 @@
 On lage screen, it should be a 3 column display
 User on the left, tweets in the middle, highlighted tweet on the right that also shows responses to it.
  -->
-
+<!--
  <div id="app">
   <div>
     <router-view></router-view>
   </div>
-</div>
+</div> -->
 
-<%= javascript_pack_tag 'app' %>
+<%#= javascript_pack_tag 'app' %>
 
 <% if signed_in? %>
   <div class="container mt-4">
@@ -17,18 +17,22 @@ User on the left, tweets in the middle, highlighted tweet on the right that also
 
       <div id="colum-profile" class="col-xs-12 col-md-6 col-lg-4">
         <div id="profile-card-box">
-          <%= render 'shared/profile_box' %>
+          <%= render 'shared/profile_box', user: @user %>
         </div>
         <div id="write-tweet-card">
           <%= render 'shared/write_tweet' %>
         </div>
+        <div id="colum-highlight">
+          <div id="highlighted-tweet">
+            Click on a tweet to reply to it here
+          </div>
+        </div>
       </div>
 
-      <div id="column-tweets" class="col-xs-12 col-md-6 col-lg-4">
+      <div id="column-tweets" class="col-xs-12 col-md-6 col-lg-4 mt-2">
         <%= render 'shared/nav_pills' %>
       </div>
-
-      <div id="colum-highlight" class="col-xs-12 col-md-6 col-lg-4 border">
+      <div id="" class="col-xs-12 col-md-6 col-lg-4">
 
       </div>
     </div>

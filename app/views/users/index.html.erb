@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-6 col-lg-4">
       <% @users.reverse.each do |user| %>
-        <%= render 'shared/profile_box2', user: user %>
+        <%= render 'shared/profile_box', user: user %>
         <br>
       <% end %>
     </div>

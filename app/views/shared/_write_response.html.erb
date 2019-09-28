@@ -1,0 +1,17 @@
+<div class="card-write-tweet">
+  <div class="container">
+    <div class="row justify-content-around">
+      <h3>Compose a Response</h3>
+      <%= simple_form_for response, remote: true, url: reply_path, method: :post do |f| %>
+        <%= f.hidden_field :parent_id %>
+        <%= f.input :content, label: false, placeholder: "up to 140 character" %>
+        <div class="d-flex justify-content-between mb-2">
+          <div>
+          </div>
+          <%= f.button :submit, class: "btn btn-outline-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>

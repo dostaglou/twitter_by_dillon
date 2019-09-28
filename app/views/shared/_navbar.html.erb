@@ -1,16 +1,14 @@
 <% if signed_in? %>
-<nav class="navbar navbar-expand-lg navbar-light background-second border-bottom border-dark">
+<nav class="navbar navbar-expand-lg navbar-light background-second">
   <%= link_to "Home", root_path, class: "navbar-brand text-white" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon text-white"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-
       <%= link_to "My Page", user_path(current_user), class: "nav-item nav-link active text-white"  %>
       <%= link_to "log out", destroy_user_session_path, method: :delete, class: "nav-item nav-link text-white"  %>
       <%= link_to "User Index", users_path, class: "nav-item nav-link text-white"  %>
-      <a class="nav-item nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </div>
   </div>
 </nav>

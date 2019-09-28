@@ -1,41 +1,35 @@
-<!--
-This will need to be generated with a loop over the data but below shall be the basic form the loop creates.
- -->
-
-  <div class="card-tweet">
-    <div class="container">
-      <div class="row p-2 mt-2 justify-content-around align-items-center">
-        <div class="avatar-tweet">
-          <%= link_to user_path(tweet.user.id) do  %>
-            <%= image_tag 'meintaipei.jpg' %>
+<div class="card-tweet">
+  <div class="container">
+    <div class="row p-2 mt-2 justify-content-around align-items-center">
+      <div class="avatar-tweet">
+        <%= link_to user_path(tweet.user.id) do  %>
+          <%= image_tag 'meintaipei.jpg' %>
+        <% end %>
+      </div>
+      <div class="card-tweet-topline">
+        <%= link_to tweet.user.username.capitalize, user_path(tweet.user.id)  %>
+        <div class="d-flex justify-content-around">
+          <% if tweet.user != current_user %>
+            <%= link_to "#" do  %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+            <%= link_to tweet_path(tweet.id), remote: true do  %>
+              <i class="fas fa-binoculars"></i>
+            <% end %>
           <% end %>
         </div>
-        <div class="card-tweet-topline">
-          <%= link_to tweet.user.username.capitalize, user_path(tweet.user.id)  %>
-          <div class="d-flex justify-content-around">
-            <% if tweet.user != current_user %>
-              <%= link_to "#" do  %>
-                <i class="fas fa-heart"></i>
-              <% end %>
-              <%= link_to "#" do  %>
-                <i class="fas fa-shoe-prints"></i>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
       </div>
-      <div class="card-tweet-tweet ml-2 border-top pt-2 pb-2">
-       <%= tweet.content %>
-      </div>
-      <div class="card-tweet-stats border-top pt-2">
-        <div class="d-flex justify-content-around">
-          <p>Likes <strong>1</strong></p>
-          <p>Replies <strong>1</strong></p>
-          <p><%= tweet.created_at.strftime("%b %d, %Y") %></p>
-        </div>
-      </div>
-
     </div>
-
+    <div class="card-tweet-tweet ml-2 border-top pt-2 pb-2">
+     <%= tweet.content %>
+    </div>
+    <div class="card-tweet-stats border-top pt-2">
+      <div class="d-flex justify-content-around">
+        <p>Likes <strong>1</strong></p>
+          <p>Replies: <strong><%= tweet.children.count %></strong></p>
+        <p><%= tweet.created_at.strftime("%b %d, %Y") %></p>
+      </div>
+    </div>
   </div>
-  <br>
+</div>
+<br>

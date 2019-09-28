@@ -1,0 +1,8 @@
+var column = document.getElementById('colum-highlight');
+column.innerHTML = ` `
+column.insertAdjacentHTML('afterbegin',
+  `<% @tweet.children.each do |tweet|  %>
+  <%= render 'shared/tweet_box', tweet: tweet %>
+  <% end %>`)
+column.insertAdjacentHTML('afterbegin', `<%= render 'shared/write_response', response: @response %>`)
+column.insertAdjacentHTML('afterbegin', `<%= render 'shared/tweet_box', tweet: @tweet %>`)

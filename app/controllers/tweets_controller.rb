@@ -25,10 +25,29 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @response = Tweet.new(parent_id: @tweet.id)
+    respond_to do |format|
+      format.js
+      format.html { redirect_to root_path }
+    end
   end
 
   def new
     @tweet = Tweet.new
+  end
+
+  def reply
+    @original = Tweet.find(params[:tweet][:parent_id])
+    @response = Tweet.new(parent_id: @original.id)
+    @tweet = Tweet.new(set_tweet_params)
+    @tweet.user = current_user
+    if @tweet.save
+      respond_to do |format|
+        format.js
+      end
+    else
+      redirect_to tweets_path
+    end
   end
 
   def create
@@ -68,6 +87,6 @@ class TweetsController < ApplicationController
   end
 
   def set_tweet_params
-    params.require(:tweet).permit(:content)
+    params.require(:tweet).permit(:content, :parent_id, :ancestry)
   end
 end

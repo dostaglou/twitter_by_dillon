@@ -2,6 +2,7 @@ module Types
   class UserType < Types::BaseObject
     field :id, ID, null: false
     field :email, String, null: false
+    # in a real app, don't return the above or below!
     field :encrypted_password, String, null: false
     field :username, String, null: false
     field :bio, String, null: true
@@ -30,6 +31,5 @@ module Types
     def follower_accounts
       object.followers
     end
-
   end
 end

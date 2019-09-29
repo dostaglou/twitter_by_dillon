@@ -3,7 +3,5 @@ module Types
   field :id, ID, null: false
   field :content, String, null: false
   field :posted_by, Types::UserType, null: true, method: :user
-  # field :user_id, ID, null: false
-
   end
 end

@@ -2,7 +2,7 @@
 
 Twitter: By Dillon
 
-THis application / site was a test of my capabilities using Ruby on Rails, Graphql, and Vue.js (pending). It was built in a mere 7 days.
+This application / site was a test of my capabilities using Ruby on Rails, Graphql, and Vue.js (pending). It was built in a mere 7 days.
 
 At current the backend and front-end use standard Ruby on Rails with jquery support. The app does expose a Graphql API that functions for all the basic needs: Signup, Login, View tweet(s), View User(s), (un)follow users, and digging into depth on those relations. The tweet-to-tweet reply feature is new and not yet supported on the graphql side.
 

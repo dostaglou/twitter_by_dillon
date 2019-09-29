@@ -1,8 +1,8 @@
 <template>
   <div>
     <ul v-for="tweet in tweets">
-      <li>タイトル：　{{tweet.id}}</li>
-      <li>内容：　{{tweet.content}}</li>
+      <li>ID：　{{tweet.id}}</li>
+      <li>Content：　{{tweet.content}}</li>
     </ul>
   </div>
 </template>
